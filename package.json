@@ -1,6 +1,7 @@
 {
   "name": "movie-listings",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "gh-pages": "^1.2.0",
