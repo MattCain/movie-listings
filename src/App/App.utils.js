@@ -11,7 +11,8 @@ import {
   intersection,
   propSatisfies,
   lte,
-  curry
+  curry,
+  length
 } from "ramda";
 
 const isNotEmpty = complement(isEmpty);
@@ -30,7 +31,10 @@ export const filterByGenre = curry(
       : filter(
           ({ genre_ids }) =>
             // Check that the movie contains all the selected genre filters.
-            equals(intersection(genre_ids, selectedGenreIds), selectedGenreIds),
+            equals(
+              length(intersection(genre_ids, selectedGenreIds)),
+              length(selectedGenreIds)
+            ),
           movies
         )
 );
